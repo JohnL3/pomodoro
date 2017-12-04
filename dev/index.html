@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>repl.it</title>
+    <link href="index.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div id="root">
+    <div id='root' class="container">
+      <header>
+        <h2>Advanced Front End Development Project</h2>
+        <span class="title-name">Pomodoro Clock</span>
+      </header>
+    </div>
+      <div class='hrr'><hr></div>
+
+    <div class="gridB">
+      <div class="gridC">
+            <div class="buttonsA">
+        <button class="btn" @click='startTimers'>Start</button>
+      </div>
+      <div class="buttonsB">
+        <button class="btnb" @click='pauseTimers'>Pause</button>
+      </div>
+      <div class="sesText">
+        <span v-bind:class="[sessionTimer ? nocolor:'', color]"  v-text='label' ></span>
+      </div>
+      <div class="displaySession">
+        <timer v-if='sessionTimer' v-text='displaySessionTime'></timer>
+        <timer class='break' v-else='sessionTimer' v-text='displayBreakTime'></timer>
+      </div>
+      
+            <span class="set-ses">SESSION</span>
+      <!--<div class="ses lef"> -->
+        <input type="number" min="1" class='time brc' v-model='sessionTime' v-on:click='setSession'>
+      <!--</div> -->
+      
+      <span class="set-break">BREAK</span>
+      <!-- <div class="ses rig"> -->
+          <input type="number" min="1" class="input time br" v-model='breakTime' v-on:click='setBreak'>
+      <!--</div> -->
+      
+      </div>
+	</div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.0.3/vue.js"></script>
+    <script src="index.js"></script>
+  </body>
+</html>
